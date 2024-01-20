@@ -286,14 +286,14 @@ func (b *Talkkonnect) initGPIO() {
 				ListeningUsed = true
 				ListeningButtonPin = io.PinNo
 			}
-			if io.Name == "rotarya" && io.PinNo > 0 {
+			if io.Name == "rotarya" && io.PinNo >= 0 {
 				log.Printf("debug: GPIO Setup Input Device %v Name %v PinNo %v", io.Device, io.Name, io.PinNo)
 				RotaryAPinPullUp := rpio.Pin(io.PinNo)
 				RotaryAPinPullUp.PullUp()
 				RotaryUsed = true
 				RotaryAPin = io.PinNo
 			}
-			if io.Name == "rotaryb" && io.PinNo > 0 {
+			if io.Name == "rotaryb" && io.PinNo >= 0 {
 				log.Printf("debug: GPIO Setup Input Device %v Name %v PinNo %v", io.Device, io.Name, io.PinNo)
 				RotaryBPinPullUp := rpio.Pin(io.PinNo)
 				RotaryBPinPullUp.PullUp()
